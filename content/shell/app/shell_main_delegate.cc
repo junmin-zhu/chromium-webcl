@@ -130,6 +130,10 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit_code) {
     }
   }
 
+  command_line.AppendSwitch(switches::kSingleProcess);
+  command_line.AppendSwitch(switches::kAllowFileAccessFromFiles);
+  command_line.AppendSwitch(
+      switches::kDisableGestureRequirementForMediaPlayback);
   if (command_line.HasSwitch(switches::kDumpRenderTree)) {
     EnableBrowserLayoutTestMode();
 
